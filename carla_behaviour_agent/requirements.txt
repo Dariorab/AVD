@@ -1,0 +1,8 @@
+carla==0.9.15
+leaderboard==3.7.3
+matplotlib==3.9.0
+networkx
+numpy==1.26.4
+Requests==2.32.3
+Shapely==2.0.4
+srunner==0.15
