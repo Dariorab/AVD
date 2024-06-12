@@ -107,6 +107,8 @@ class MyTeamAgent(AutonomousAgent):
                 "brake": controls.brake,
                 })
             if len(self.configs["SaveSpeedData"]) > 0:
+                current_velocity = input_data["Speed"][1]["speed"] * 3.6
+                print(f"velocity: {current_velocity}")
                 with open("team_code/"+self.configs["SaveSpeedData"],"a") as fp:
                     fp.write(str(timestamp)+";"+str(input_data["Speed"][1]["speed"] * 3.6)+";"+str(self.configs["target_speed"])+"\n")
                     fp.close()

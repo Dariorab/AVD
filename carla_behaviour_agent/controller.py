@@ -276,18 +276,11 @@ class StanleyLateralController():
             steering -= 2*np.pi
             
         steering_error = steering
-		
-	    # da modificare:
-        if speed_estimate == 0:
-            speed_estimate = 0.1
-
-        # Stanley Control Law   
-        # try:
-        # 	steering += atan(self._kv * lateral_error /
-        #                        (self._ks + speed_estimate))
-        # except:
-        # 	pass
-        # # print("Current Heading: ", observed_heading, " - Desired Heading: ", desired_heading)
+        
+        # Stanley Control Law
+        steering += atan(self._kv * lateral_error /
+                        (self._ks + speed_estimate))
+        # print("Current Heading: ", observed_heading, " - Desired Heading: ", desired_heading)
         # print("Heading error: ", steering_error, "Crosstrack error: ", lateral_error)
         # print("Output: ", steering)
         

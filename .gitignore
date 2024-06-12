@@ -1,6 +1,6 @@
 .idea/
 run_test.sh
 carla_behaviour_agent/__pycache__/
-run_test.sh
-carla_behaviour_agent/config_agent_basic.json
+!run_test.sh
+!carla_behaviour_agent/config_agent_basic.json
 speed.txt
