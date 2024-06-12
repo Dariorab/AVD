@@ -1,12 +1,12 @@
 #!/bin/bash
 #qdtrack_ training.xml
 # export ROUTES=/workspace/team_code/route_controlling.xml
-export ROUTE_NAME=route_4
-export ROUTES=/workspace/team_code/routes/${ROUTE_NAME}_avddiem.xml #TO EDIT
+export ROUTE_NAME=route_4 #TO EDIT
+export ROUTES=/workspace/team_code/routes/${ROUTE_NAME}_avddiem.xml 
 export REPETITIONS=1
 export DEBUG_CHALLENGE=1
-export TEAM_AGENT=/workspace/team_code/carla_behaviour_agent/basic_autonomous_agent.py #TO EDIT
-export TEAM_CONFIG=/workspace/team_code/carla_behaviour_agent/config_agent_basic.json #TO EDIT
+export TEAM_AGENT=/workspace/team_code/carla_behaviour_agent/basic_autonomous_agent.py
+export TEAM_CONFIG=/workspace/team_code/carla_behaviour_agent/config_agent_basic.json
 export CHALLENGE_TRACK_CODENAME=SENSORS
 export CARLA_HOST=0.0.0.0 #TO EDIT WITH REMOTE HOST (...)
 export CARLA_PORT=6006
