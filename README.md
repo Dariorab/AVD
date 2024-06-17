@@ -1,10 +1,14 @@
 ## Project work AVD
 
-### TO-DO:
-- [ ] Modificare PID 
-- [ ] Da inserire
-- [ ] Da inserire
+### Setup Server simulation
+Sincrono e con Fixed time-step
 
+
+### Meaning of scenario's type
+[LINK](https://github.com/carla-simulator/scenario_runner/blob/master/Docs/CHANGELOG.md)
+
+### Catalogue static objects
+[CATALOGO](https://carla.readthedocs.io/en/latest/catalogue_props/)
 
 ### command for Local execution
 ```bash

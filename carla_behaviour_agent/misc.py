@@ -99,7 +99,7 @@ def is_within_distance(target_transform, reference_transform, max_distance, angl
     fwd = reference_transform.get_forward_vector()
     forward_vector = np.array([fwd.x, fwd.y])
     angle = math.degrees(math.acos(np.clip(np.dot(forward_vector, target_vector) / norm_target, -1., 1.)))
-
+    #print(fwd, angle, min_angle, max_angle, angle_interval)
     return min_angle < angle < max_angle
 
 
@@ -159,6 +159,7 @@ def compute_distance(location_1, location_2):
     y = location_2.y - location_1.y
     z = location_2.z - location_1.z
     norm = np.linalg.norm([x, y, z]) + np.finfo(float).eps
+    #print("COMPUTE DISTANCE: ", norm)
     return norm
 
 

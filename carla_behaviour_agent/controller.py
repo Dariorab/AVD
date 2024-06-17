@@ -52,6 +52,8 @@ class VehicleController():
         self._lon_controller = PIDLongitudinalController(self._vehicle, **args_longitudinal)
         self._lat_controller = StanleyLateralController(self._vehicle, offset, **args_lateral)
 
+        print("siamo in init Vehicle")
+
 
     def run_step(self, target_speed, waypoint):
         """

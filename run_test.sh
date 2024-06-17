@@ -1,7 +1,7 @@
 #!/bin/bash
 #qdtrack_ training.xml
 # export ROUTES=/workspace/team_code/route_controlling.xml
-export ROUTE_NAME=route_4 #TO EDIT
+export ROUTE_NAME=route_1 #TO EDIT
 export ROUTES=/workspace/team_code/routes/${ROUTE_NAME}_avddiem.xml 
 export REPETITIONS=1
 export DEBUG_CHALLENGE=1
