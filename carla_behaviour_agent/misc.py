@@ -63,7 +63,7 @@ def get_trafficlight_trigger_location(traffic_light):
     return carla.Location(point_location.x, point_location.y, point_location.z)
 
 
-def is_within_distance(target_transform, reference_transform, max_distance, angle_interval=None):
+def is_within_distance(target_transform, reference_transform, max_distance, angle_interval=None,preference='both'):
     """
     Check if a location is both within a certain distance from a reference object.
     By using 'angle_interval', the angle between the location and reference transform
@@ -98,9 +98,30 @@ def is_within_distance(target_transform, reference_transform, max_distance, angl
 
     fwd = reference_transform.get_forward_vector()
     forward_vector = np.array([fwd.x, fwd.y])
+    fwd = reference_transform.get_forward_vector()
+    forward_vector = np.array([fwd.x, fwd.y])
+
+    # Calcoliamo l'angolo in gradi tra il vettore di orientamento del veicolo che ci sta dietro e la differenza di posizione
     angle = math.degrees(math.acos(np.clip(np.dot(forward_vector, target_vector) / norm_target, -1., 1.)))
-    #print(fwd, angle, min_angle, max_angle, angle_interval)
-    return min_angle < angle < max_angle
+
+    # Calcolo il prodotto vettoriale
+    cross_prod = np.cross(forward_vector, target_vector)
+
+    # Se la norma del prodotto vettoriale è positiva, il target si trova a destra, altrimenti a sinistra
+    is_right = cross_prod >= 0
+
+    # Valutiamo se sta ad una distanza < max_distance e si trova nell'intervallo angolare angle_interval = [min_angle, max_angle]
+    if min_angle < angle < max_angle:
+        if preference == 'both':
+            return True
+        elif preference == 'right' and is_right:
+            return True
+        elif preference == 'left' and not is_right:
+            return True
+        else:
+            return False
+    else:
+        return False
 
 
 def compute_magnitude_angle(target_location, current_location, orientation):
